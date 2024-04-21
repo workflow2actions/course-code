@@ -20,4 +20,15 @@ jobs:
         steps:
             - name: "Try to run a macos specific command"
               run: sw_vers
+    dependant-job:
+        runs-on: windows-latest
+        # needs can be a job id, or an array of job id's
+        needs: [
+            run-shell-commands
+        ]
+        steps:
+            - name: "echo a string"
+              run: Write-Output "Windows String"
+            - name: Intentional Error Step
+              run: doesnotexit
 
