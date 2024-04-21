@@ -15,3 +15,9 @@ jobs:
                 hostname
                 node -v
                 npm -v
+    parallel-job-macos:
+        runs-on: macos-latest
+        steps:
+            - name: "Try to run a macos specific command"
+              run: sw_vers
+
