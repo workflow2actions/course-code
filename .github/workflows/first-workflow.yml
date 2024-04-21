@@ -11,6 +11,8 @@ jobs:
               run: echo "Hello World"
             - name: "multiline Command"
               run: |
+                uname -a
                 hostname
                 node -v
                 npm -v
+y
