@@ -15,4 +15,3 @@ jobs:
                 hostname
                 node -v
                 npm -v
-y
