@@ -28,7 +28,7 @@ jobs:
         ]
         steps:
             - name: "echo a string"
-              run: Write-Output "Windows String"
+              run: Write-Output "Windows String New"
             - name: Intentional Error Step
               run: doesnotexit
 
