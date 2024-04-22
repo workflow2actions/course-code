@@ -1,0 +1,24 @@
+name: Simple Action
+on: [push]
+
+jobs:
+  simple-action:
+    runs-on: ubuntu-latest
+    steps:
+      # Action URL: https://github.com/actions/hello-world-javascript-action
+      # Input: who-to-greet | default: world
+      # Output: time
+      # Local
+      # - name: Simple JS Action
+      #   uses: .git/actions/something-so-on.yaml
+      # Or Remote
+      # Change @main to a specific commit SHA or version tag, e.g.:
+      # Commit SHA: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+      # Tag:        actions/hello-world-javascript-action@v1.2.3
+      - name: Simple JS Action
+        id: greet
+        uses: actions/hello-world-javascript-action@eaa7b84fa5f54dba6744bcd1a363c161dd05eb8f
+        with:
+          who-to-greet: "Aaron"
+      - name: Log Greeting Time. Output from previous step is saved to id: greet
+        run: echo "${{ steps.greet.time}}"
