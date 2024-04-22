@@ -1,10 +1,19 @@
 name: Working Dirs and Shells
 on: [push]
+# Setting bash shell here, will apply to all jobs including Windows
+# Unless set at job level or at step. Check windows jobs next.
+defaults:
+  run:
+    shell: bash
+    # working-directory: /de/ed
 
 jobs:
     display-wd-info:
         runs-on: ubuntu-latest
         steps:
+            - name: Set working directory
+              working-directory: /home/runner
+              run: pwd
             - name: Display Working Dir & List Files
               run: |
                 pwd
@@ -14,6 +23,9 @@ jobs:
                 echo $GITHUB_WORKSPACE
     display-wd-info-windows:
         runs-on: windows-latest
+        defaults:
+          run:
+            shell: pwsh
         steps:
             - name: Display Working Dir & List Files on Windows
               run: |
@@ -22,4 +34,9 @@ jobs:
                 echo $env:GITHUB_SHA
                 echo $env:GITHUB_REPOSITORY
                 echo $env:GITHUB_WORKSPACE
+            - name: Python Shell
+              shell: python
+              run: |
+                import platform
+                print(platform.processor())
                     
