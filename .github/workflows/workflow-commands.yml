@@ -9,8 +9,16 @@ jobs:
               run: echo "::error::Missing semicolon"
             - name: "Setting a debug message with params"
               run: echo "::debug title=Debug title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon"
-            - name: "Setting an error message with params"
+            - name: "Setting a warning message with params"
               run: echo "::warning title=Warning title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon"
-            - name: "Setting an notice message with params"
+            - name: "Setting a notice message with params"
               run: echo "::notice title=Notice title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon"
-          
+            - name: "Group of logs"
+              run: |
+                echo "::group:: My group title"
+                echo "Inside group"
+                echo "::endgroup::""
+            - name: "Masking sensitive values"
+              run: echo "::add-mask::Secret String"
+            - name: Echo a secret
+              run: echo "Secret String"
