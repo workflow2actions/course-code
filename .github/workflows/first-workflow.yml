@@ -2,6 +2,7 @@ name: First Workflow
 on: [push]
 # Workflow can contain one or more jobs
 # `jobs` is an object
+# Adding: [skip ci] or [ci skip] or [no ci] or [skip actions] or [actions skip] to commit message will skip workflows
 
 jobs:
     run-shell-commands:
