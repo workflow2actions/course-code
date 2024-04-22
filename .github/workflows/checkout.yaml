@@ -2,6 +2,12 @@ name: "Checkout a certain branch"
 on: [push]
 
 jobs:
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files Before
+        run: ls -la
+      - uses: action/checkout@v4
   checkout-and-display-files:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +19,5 @@ jobs:
           # git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
           # git fetch origin
           # git checkout main
-          
       - name: List Files After
         run: ls -al
