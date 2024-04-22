@@ -27,7 +27,7 @@ jobs:
           run:
             shell: pwsh
         steps:
-            - name: Display Working Dir & List Files on Windows
+            - name: Display Working Dir & List Files on The Windows
               run: |
                 Get-Location
                 dir
