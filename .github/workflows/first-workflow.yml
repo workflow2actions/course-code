@@ -22,7 +22,7 @@ jobs:
               run: sw_vers
     dependant-job:
         runs-on: windows-latest
-        # needs can be a job id, or an array of job id's
+        # needs: can be a job id, or an array of job id's
         needs: [
             run-shell-commands
         ]
