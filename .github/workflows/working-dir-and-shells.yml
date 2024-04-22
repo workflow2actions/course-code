@@ -17,7 +17,7 @@ jobs:
         steps:
             - name: Display Working Dir & List Files on Windows
               run: |
-                Get-Locatoin
+                Get-Location
                 dir
                 echo $env:$GITHUB_SHA
                 echo $env:$GITHUB_REPOSITORY
